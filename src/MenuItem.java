@@ -1,20 +1,23 @@
 public class MenuItem {
-    private String name;
-    private Double price;
-    private String content;
+    private final String name;
+    private final Double price;
+    private final String content;
 
-    public MenuItem(String name,Double price,String content){
+    public MenuItem(String name, Double price, String content) {
         this.name = name;
         this.price = price;
-        this.content =content;
+        this.content = content;
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    public Double getPrice(){
+
+    public Double getPrice() {
         return price;
     }
-    public String getContent(){
+
+    public String getContent() {
         return content;
     }
 }
