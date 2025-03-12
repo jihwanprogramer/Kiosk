@@ -2,32 +2,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
-    private final String categoryName;
-    private final List<MenuItem> menuItems;
+    String category;
+    List<MenuItem> menuItemList;
 
-    public Menu(String categoryName) {
-        this.categoryName = categoryName;
-        menuItems = new ArrayList<>();
+
+    //Menu 생성자
+    public Menu(String category) {
+        this.category = category;
+        this.menuItemList = new ArrayList<>();
     }
 
+    //Menuitem 을 menuItemList 에 추가하는 메소드
     public void addMenuItem(MenuItem item) {
-        menuItems.add(item);
+        menuItemList.add(item);
     }
 
+    //카테고리 이름 추출
+    public String getCategoryName() {
+        return category;
+    }
+
+    //메뉴 보여주기
     public void viewMenu() {
-        System.out.println("[ " + categoryName + " MENU ]");
-        for (int i = 0; i < menuItems.size(); i++) {
-            MenuItem item = menuItems.get(i);
-            System.out.println(i + 1+". "+item.getName() + " | ₩ "+item.getPrice()+ " | "+ item.getContent());
+        System.out.println("[ " + category + " MENU ]");
+        for (MenuItem m : menuItemList) {
+            System.out.println(menuItemList.indexOf(m) + 1 + ". " + m.getName() + " | ₩ " + m.getPrice() + " | " + m.getContent());
         }
         System.out.println("0. 뒤로가기");
     }
 
-    public List<MenuItem> getMenuItems() {
-        return menuItems;
-    }
-
-    public String getCategoryName() {
-        return categoryName;
+    //MenuItem 리스트 추출
+    public List<MenuItem> getMenuItemList() {
+        return menuItemList;
     }
 }
