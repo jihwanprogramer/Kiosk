@@ -1,36 +1,59 @@
-<img src="https://github.com/jihwanprogramer/calulators/blob/main/img/calculator.jpg?raw=true" alt="배너" width="80%"/>
+<img src="https://github.com/jihwanprogramer/Kiosk/blob/main/image/Kiosk.jpg?raw=true" alt="배너" width="80%"/>
 
 <br/>
 <br/>
 
 # 1. Project Overview (프로젝트 개요)
-- 프로젝트 이름: 계산기 만들기
-- 프로젝트 설명: 클래스를 이용하여 간단한 계산기를 만듬.
+- 프로젝트 이름: 키오스크 만들기
+- 프로젝트 설명: 클래스를 이용하여 간단한 키오스크를 만듬.
 
 
 
 # 2. Key Features (주요 기능)
-- **연산 기능**:
-    - ➕ ➖ ➗ ✖️ 를 이용하여 두 숫자의 연산이 가능
+- **메뉴 선택 기능**:
+    - 사용자는 메인 메뉴에서 카테고리를 선택할 수 있음.
+    - 선택한 카테고리의 메뉴 항목을 확인할 수 있음.
 
-- **리스트 저장 기능**:
-    - 연산 시에 출력되는 결과 값은 리스트에 저장
 
-- **리스트 출력 기능**:
-    - 결과 값이 저장된 리스트를 불러옴
+- **장바구니 추가 기능**:
+    - 선택한 메뉴 항목을 장바구니에 추가할 수 있음.
+    - 추가된 메뉴 항목은 사용자에게 확인 요청 후 장바구니에 저장.
 
-- **조건부 결과값 출력 기능**:
-    - 입력값보다 높은 결과값만 출력
 
-- **결과 값 삭제기능**:
-    - 리스트에 있는 결과값 삭제
+- **주문 확인 기능**:
+    - 장바구니에 담긴 메뉴 항목을 확인할 수 있음
+    - 장바구니의 총 금액을 계산하여 출력.
+
+
+- **장바구니 비우기 기능**:
+    - 사용자가 장바구니를 비울 수 있는 기능 제공.
+
+
+- **주문하기 기능**:
+    - 장바구니에 있는 품목을 주문할 수 있음.
+    - 주문 후 장바구니가 비워짐.
+
+
+- **메뉴 항목 설명 기능**:
+  - 각 메뉴 항목의 이름, 가격 및 설명을 확인할 수 있음.
 
 
 # 3. Technology Stack (기술 스택)
 ##  Language
-|      |                                                                                                                  |
-|------|------------------------------------------------------------------------------------------------------------------|
-| Java | <img src="https://github.com/jihwanprogramer/calulators/blob/main/img/Java.jpg?raw=true" alt="Java" width="200"> | 
+|        |                                                                                                                    |
+|--------|--------------------------------------------------------------------------------------------------------------------|
+| Java   | <img src="https://github.com/jihwanprogramer/calulators/blob/main/img/Java.jpg?raw=true" alt="Java" width="200">   | 
+
+## Version Control
+|      |                                                                                                       |
+|------|-------------------------------------------------------------------------------------------------------|
+| Git  | <img src="https://github.com/jihwanprogramer/Kiosk/blob/main/image/GIT.jpg?raw=true" width="200">     |
+
+## JDK Version
+|        |                                                                                                                  |
+|--------|------------------------------------------------------------------------------------------------------------------|
+| JDK 23 | <img src="https://github.com/jihwanprogramer/Kiosk/blob/main/image/JDK23.jpg?raw=true" alt="JDK 11" width="200"> |
+
 |
 
 <br/>
@@ -39,43 +62,27 @@
 ```
 caclulatorProject
 src/
-├── calculate  
-│        ├── Calculate            # 연산메서드 생성자 메서드 클래스
-│        ├── OperatorType.enum    # 계산기 주요 기능 구현
-│
-│── calculatorApp               
-│        ├── CalculatorApp        # 메인 클래스
-│
-│── operations           
-│        ├──Addition              # 덧셈 클래스
-│        ├──Division              # 뺄셈 클래스
-│        ├──Multiplication        # 곱셈 클래스
-│        ├──Subtraction           # 나눗셈 클래스
-├── .gitignore                    # Git 무시 파일 목록
-└── README.md                     # 프로젝트 개요 및 사용법
+├── Cart            # 장바구니 기능을 관리하는 클래스
+├── MenuItem        # 개별 메뉴 항목을 정의하는 클래스
+│── Kiosk           # 키오스크의 메인 기능을 담당하는 클래스
+│── Menu            # 특정 카테고리의 메뉴를 관리하는 클래스
+│── Main            # 프로그램의 진입점이 되는 클래스
+├── .gitignore      # Git 무시 파일 목록
+└── README.md       # 프로젝트 개요 및 사용법
 ```
 
 <br/>
 
 # 5. Development Workflow (개발 워크플로우)
 ## 브랜치 전략 (Branch Strategy)
-개인 프로젝트 이지만 정확한 병합과 수정을 위해 브랜치 사용
-
-- Main Branch
-    - 배포 가능한 상태의 코드를 유지합니다.
-    - 모든 배포는 이 브랜치에서 이루어집니다.
-
-- Dev Branch
-    - 수정한 코드를 저장하고 병합 시도합니다.
-    - 모든 기능 개발은 이 브랜치에서 이루어집니다.
-
-
+적절한 클래스 사용과 다양한 메소드 활용이 주목적이기에 빠르게 수정 가능한
+직접적인 Main Branch을 바로 사용했습니다.
 
 
 
 ## 블록 구문
+한 줄짜리 블록일 경우라도 {}를 생략하지 않고, 명확히 줄 바꿈 하여 사용한다
 ```
-// 한 줄짜리 블록일 경우라도 {}를 생략하지 않고, 명확히 줄 바꿈 하여 사용한다
 if (UpResultInput == 1) {
        operatorType.UpResult(firstNumber, secondNumber);
        }
@@ -86,8 +93,17 @@ else if (UpResultInput == 4) {
        break;
 }
 ```
+<br/>
+<br/>
+카멜 표기법을 이용하여 가독성을 향상시켰다.
 
+```
+double totalPrice = cart.getTotalPrice(); // 카멜 표기법
+cart.viewCart(); // 카멜 표기법
+String userInput = scanner.next(); // 카멜 표기법
+completeOrder(); // 카멜 표기법
 
+```
 
 <br/>
 
@@ -95,9 +111,9 @@ else if (UpResultInput == 4) {
 메소드 작성 시 아래 네이밍 규칙을 준수하여 의미 전달을 명확하게 한다.<br/>
 메소드명이 길어지더라도 의미 전달의 명확성에 목적을 두어 작성한다.<br/>
 ```
-public void UpResult(int FirstNum, int SecondNum)
+public void viewCart()
 
-public void ViewAllResult()
+public void clearCart()
 ```
 
 <br/>
