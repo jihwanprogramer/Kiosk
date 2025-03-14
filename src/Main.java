@@ -1,8 +1,10 @@
+import java.util.InputMismatchException;
+
 public class Main {
     public static void main(String[] args) {
-        Menu burgerMenu = new Menu("BURGERS"); // 버거 메뉴 생성
-        Menu drinkMenu = new Menu("DRINKING"); // 음료 메뉴 생성
-        Menu dessertMenu = new Menu("DESSERT"); // 디저트 메뉴 생성
+        Menu burgerMenu = new Menu("BURGERS");
+        Menu drinkMenu = new Menu("DRINKING");
+        Menu dessertMenu = new Menu("DESSERT");
 
         burgerMenu.addMenuItem(new MenuItem("SmokeShack", 8.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거"));
         burgerMenu.addMenuItem(new MenuItem("Cheeseburger", 6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거"));
@@ -21,6 +23,15 @@ public class Main {
         kiosk.addMainMenu(drinkMenu);
         kiosk.addMainMenu(dessertMenu);
 
-        kiosk.start();
+        while (true) {
+            try {
+                kiosk.start();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("숫자로 입력하세요. 다시 시도하세요.");
+            } catch (IllegalArgumentException e) {
+                System.out.println("해당 숫자는 메뉴에 없습니다. 다시 시도하세요 ");
+            }
+        }
     }
 }
