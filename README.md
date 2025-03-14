@@ -55,7 +55,7 @@
 
 |        |                                                                                                                  |
 |--------|------------------------------------------------------------------------------------------------------------------|
-| JDK 23 | <img src="https://github.com/jihwanprogramer/Kiosk/blob/main/image/JDK23.jpg?raw=true" alt="JDK 11" width="200"> |
+| JDK 23 | <img src="https://github.com/jihwanprogramer/Kiosk/blob/main/image/JDK23.jpg?raw=true" alt="JDK 11" width="180"> |
 
 |
 
