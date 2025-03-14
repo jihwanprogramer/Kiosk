@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Cart {
     public List<MenuItem> cartList;
-    double totalPrice;
+    public static double totalPrice;
 
     //Cart 생성자
     public Cart() {
@@ -18,7 +18,7 @@ public class Cart {
     //총 금액 출력
     public double getTotalPrice() {
         for (MenuItem m : cartList) {
-            totalPrice = m.getPrice();
+            totalPrice += m.getPrice();
         }
         return totalPrice;
     }
@@ -28,9 +28,11 @@ public class Cart {
         System.out.println("아래와 같이 주문 하시겠습니까?");
         System.out.println("[ Orders ]");
         for (MenuItem m : cartList) {
-            System.out.println(m.getName() + " | ₩ " + m.getPrice() + " | " + m.getContent());
+            System.out.println(m.getName() + " | $ " + m.getPrice() + " | " + m.getContent());
         }
-        System.out.println("1.주문    2.메뉴판");
+        System.out.println("\n[Total]");
+        System.out.printf("$ %.1f%n", getTotalPrice());
+        System.out.println("\n1.주문    2.메뉴판");
     }
 
     //장바구니 리스트 출력
@@ -39,7 +41,7 @@ public class Cart {
     }
 
     //장바구니 비우기
-    public void clearCart(){
+    public void clearCart() {
         cartList.clear();
     }
 
