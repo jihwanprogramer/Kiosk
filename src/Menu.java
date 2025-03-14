@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Menu {
     String category;
@@ -23,12 +24,21 @@ public class Menu {
     }
 
     //메뉴 보여주기
+    // public void viewMenu() {
+    //    System.out.println("[ " + category + " MENU ]");
+    //     for (MenuItem m : menuItemList) {
+    //        System.out.println(menuItemList.indexOf(m) + 1 + ". " + m.getName() + " | ₩ " + m.getPrice() + " | " + m.getContent());
+    //    }
+    //    System.out.println("0. 뒤로가기");
+    //  }
+
+    //Stream 활용 메뉴 보여주기
     public void viewMenu() {
         System.out.println("[ " + category + " MENU ]");
-        for (MenuItem m : menuItemList) {
-            System.out.println(menuItemList.indexOf(m) + 1 + ". " + m.getName() + " | ₩ " + m.getPrice() + " | " + m.getContent());
-        }
-        System.out.println("0. 뒤로가기");
+        IntStream.range(0, menuItemList.size()).forEach(i -> {
+            MenuItem m = menuItemList.get(i);
+            System.out.println((i + 1) + ". " + m.getName() + " | ₩ " + m.getPrice() + " | " + m.getContent());
+        });
     }
 
     //MenuItem 리스트 추출
